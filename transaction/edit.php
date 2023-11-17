@@ -50,7 +50,7 @@
 
 
 
-            header("Location: controller.php");
+            header("Location: index.php");
     }  catch(PDOException $e) {
         die("ERROR: Could not connect. " . $e->getMessage());
     }
