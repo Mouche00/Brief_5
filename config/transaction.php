@@ -10,10 +10,10 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->setAttribute (PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
 
-    $sql = "CREATE TABLE IF NOT EXISTS Transactions (
+    $sql = "CREATE TABLE IF NOT EXISTS Transaction (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         montant FLOAT(30) NOT NULL,
-        typeT ENUM('debit', 'credit') NOT NULL,
+        type ENUM('debit', 'credit') NOT NULL,
         compte_id INT(6) UNSIGNED,
         FOREIGN KEY (compte_id) REFERENCES Compte(id) 
             ON DELETE CASCADE
